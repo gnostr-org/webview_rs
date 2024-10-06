@@ -96,3 +96,7 @@ test-gnostr-bounce-event:## 	test-gnostr-bounce-event
 
 -include Makefile
 -include cargo.mk
+
+.PHONY:webview-examples
+webview-examples:## 	webview-examples
+	cd webview-examples && make
