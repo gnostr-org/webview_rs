@@ -307,6 +307,7 @@ where
     WebViewBuilder::new()
 }
 
+#[allow(clippy::type_complexity)]
 struct UserData<'a, T> {
     inner: T,
     live: Arc<RwLock<()>>,
