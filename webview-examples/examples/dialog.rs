@@ -1,13 +1,13 @@
 //#![windows_subsystem = "windows"]
 
 extern crate tinyfiledialogs as tfd;
-extern crate web_view;
+extern crate webview_rs;
 
 use tfd::MessageBoxIcon;
-use web_view::*;
+use webview_rs::*;
 
 fn main() -> WVResult {
-    let webview = web_view::builder()
+    let webview = webview_rs::builder()
         .title("dialog.rs")
         .content(Content::Html(HTML))
         .size(800, 600)
