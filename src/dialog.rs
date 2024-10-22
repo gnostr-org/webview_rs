@@ -8,6 +8,7 @@ use {WVResult, WebView};
 )]
 #[derive(Debug)]
 pub struct DialogBuilder<'a: 'b, 'b, T: 'a> {
+    #[allow(dead_code)]
     webview: &'b mut WebView<'a, T>,
 }
 
