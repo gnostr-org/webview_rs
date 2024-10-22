@@ -59,7 +59,7 @@ jobs:
           override: true
 
       - name: cargo install cargo-clippy
-        run: cargo install cargo-clippy
+        run: cargo && cargo install cargo-clippy
 
       - name: make webview-examples
         run: make webview-examples
