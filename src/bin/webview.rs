@@ -69,7 +69,6 @@ li a {
   padding: 8px;
   background-color: \#dddddd;
 }
-body {margin:0;}
 ul {
   list-style-type: none;
   margin: 0;
@@ -108,32 +107,54 @@ button {
 button:focus {
   outline: revert;
 }
+body {
+
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  /* overflow-x: hidden; /* Hide horizontal scrollbar */
+
+  margin-top: 70px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+
+}
+.content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+}
 </style>
 </head>
 <body>
-<script src="https://unpkg.com/@isomorphic-git/lightning-fs"></script>
-<script src="https://unpkg.com/isomorphic-git@beta"></script>
-<script type="module"></script>
 <ul>
-<li>
-    <button onclick="external.invoke('open')">Open</button>
-</li>
-<li>
-    <button onclick="external.invoke('save')">Save</button>
-</li>
-<li>
-    <button onclick="external.invoke('info')">Info</button>
-</li>
-<li>
-    <button onclick="external.invoke('warning')">Warning</button>
-</li>
-<li>
-    <button onclick="external.invoke('warning')">Warning</button>
-</li>
-<li>
-    <button onclick="external.invoke('exit')">Exit</button>
-</li>
+<li><button onclick="external.invoke('open')">Open</button></li>
+<li><button onclick="external.invoke('save')">Save</button></li>
+<li><button onclick="external.invoke('info')">Info</button></li>
+<li><button onclick="external.invoke('warning')">Warning</button></li>
+<li><button onclick="external.invoke('exit')">Exit</button></li>
 </ul>
+
+<div class="content">
+<h1>Lorem Ipsum</h1>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec venenatis nisi. Morbi eget massa rutrum, bibendum quam vitae, gravida felis. Praesent ac fringilla diam. Donec semper metus quis ipsum mollis gravida. Etiam ut odio dolor. Nullam vel sapien vel risus tristique iaculis. Integer rhoncus nunc lacus, eget luctus orci malesuada a. Nam sit amet nunc purus. Maecenas facilisis dapibus ultrices.
+</p>
+<p>
+Maecenas a lacus facilisis, viverra tellus ac, ultrices lectus. Praesent tincidunt porta vehicula. Aliquam ex sapien, tempor at euismod eget, luctus ac nunc. Etiam finibus ex venenatis sem posuere sodales. Phasellus eget posuere est. Quisque elementum mi id libero faucibus, ut rutrum lacus egestas. Fusce tristique pulvinar diam vitae varius. Vivamus lectus velit, pharetra id imperdiet sit amet, sodales in est. Phasellus vitae pellentesque diam. Nam faucibus at ipsum eget lobortis. Vestibulum in libero posuere, molestie mi ut, euismod orci.
+</p>
+<p>
+Nulla enim orci, ullamcorper sit amet congue id, commodo non purus. Integer urna odio, pulvinar quis metus porta, malesuada euismod libero. Maecenas varius tempus placerat. Morbi non turpis vel arcu dignissim placerat. Mauris rutrum faucibus suscipit. Duis at interdum lacus, ac maximus nisl. Maecenas libero ante, scelerisque nec venenatis eu, finibus vitae ligula. Quisque in tempor ipsum. Curabitur est tellus, porttitor ut rutrum sit amet, maximus pellentesque elit.
+</p>
+<p>
+Nullam a metus eu magna auctor tempus. Fusce euismod efficitur nunc nec vestibulum. Nulla facilisi. Duis gravida tellus elit, vitae venenatis ligula porttitor ac. Nunc id justo aliquam, sagittis ex vel, pretium ante. Pellentesque mattis elit in erat facilisis, id vehicula ante mattis. Sed vel nunc vulputate, vehicula diam at, ornare sem. Cras tempor, elit tempus lacinia pretium, sem lectus faucibus eros, et volutpat risus metus ut arcu. Nunc a feugiat mauris. Vivamus sagittis interdum lacus et varius. Sed id odio magna. Nullam non ultricies tellus, blandit lobortis metus. Suspendisse eu congue eros. Curabitur placerat dui arcu, a dapibus est vulputate vel.
+</p>
+<p>
+In et porttitor libero, quis sagittis tortor. Nunc non rhoncus eros, pretium accumsan eros. Fusce hendrerit nec tellus in accumsan. Aliquam vitae ipsum mattis, cursus lectus id, congue nulla. Cras consequat lorem lacus, sed faucibus massa ullamcorper sit amet. Etiam id orci sit amet augue laoreet dapibus vel vel leo. Duis non nibh in mi bibendum blandit pulvinar ac lorem. Integer commodo consequat finibus. Curabitur non aliquet nibh, at interdum erat. Nullam iaculis libero tellus, sit amet iaculis mi pharetra a. Morbi efficitur, ex eleifend placerat rhoncus, velit sem blandit tortor, sit amet facilisis metus nisi nec sem. Suspendisse neque libero, placerat vitae laoreet quis, tincidunt non neque.
+</p>
+
+</div>
 </body>
 </html>
 "#;
