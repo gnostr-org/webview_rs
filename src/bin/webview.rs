@@ -8,7 +8,7 @@ use web_view::*;
 
 fn main() -> WVResult {
     let webview = web_view::builder()
-        .title("dialog.rs")
+        .title("webview.rs")
         .content(Content::Html(HTML))
         .size(800, 600)
         .resizable(true)
