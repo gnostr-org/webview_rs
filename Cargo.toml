@@ -25,3 +25,6 @@ members = [
     "webview-examples",
     "webview-sys",
 ]
+
+[build-dependencies]
+grep = "0.3.2"
