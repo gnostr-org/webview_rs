@@ -10,7 +10,7 @@ fn main() -> WVResult {
     let webview = webview_rs::builder()
         .title("webview.rs")
         .content(Content::Html(HTML))
-        .size(800, 600)
+        .size(800, 666)
         .resizable(true)
         .debug(true)
         .user_data(())
