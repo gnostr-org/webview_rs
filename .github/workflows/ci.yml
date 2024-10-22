@@ -99,7 +99,7 @@ jobs:
 
       - name: make webview-examples
         run: make webview-examples
-        #if: contains(matrix.os, 'ubuntu')
+        if: contains(matrix.os, 'ubuntu')
 
       - name: install nightly toolchain
         uses: actions-rs/toolchain@v1
