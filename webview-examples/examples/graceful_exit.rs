@@ -1,9 +1,9 @@
-extern crate web_view;
+extern crate webview_rs;
 
-use web_view::*;
+use webview_rs::*;
 
 fn main() {
-    let res = web_view::builder()
+    let res = webview_rs::builder()
         .title("Graceful Exit Example")
         .content(Content::Html(include_str!("graceful_exit/index.html")))
         .size(800, 600)
