@@ -1,11 +1,11 @@
 #![windows_subsystem = "windows"]
 
-extern crate web_view;
+extern crate webview_rs;
 
-use web_view::*;
+use webview_rs::*;
 
 fn main() {
-    web_view::builder()
+    webview_rs::builder()
         .title("Minimal webview example")
         .content(Content::Url("https://en.m.wikipedia.org/wiki/Main_Page"))
         .size(800, 600)
