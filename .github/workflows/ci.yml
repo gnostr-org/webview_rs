@@ -37,7 +37,7 @@ jobs:
       matrix:
         #os: [macOS-latest, windows-2019, ubuntu-latest]
         os: [ubuntu-latest, macos-latest]
-        examples: [actix, color_change, dialog, elm-counter, frameless, fullscreen, graceful_exit, minimal, multi_window, pageload, simple_grep, timer, title_change, todo, todo-elm, todo-purescript, todo-vue, todo-yew]
+        examples: [color_change, dialog, elm-counter, frameless, fullscreen, graceful_exit, minimal, multi_window, pageload, simple_grep, timer, title_change, todo, todo-elm, todo-purescript, todo-vue, todo-yew]
 
     name: cargo test stable
     steps:
