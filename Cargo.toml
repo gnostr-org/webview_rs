@@ -1,5 +1,5 @@
 [package]
-name = "web-view"
+name = "webview_rs"
 version = "0.7.3"
 authors = ["Boscop", "zxey <r.hozak@seznam.cz>", "Sam Green <sam.green81@gmail.com>"]
 readme = "README.md"
