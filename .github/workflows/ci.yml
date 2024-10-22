@@ -97,16 +97,16 @@ jobs:
           brew install gtk-mac-integration
         if: contains(matrix.os, 'macos')
 
-      - name: make webview-examples
-        run: make webview-examples
-        if: contains(matrix.os, 'ubuntu')
-
       - name: install nightly toolchain
         uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
           profile: minimal
           override: true
+        if: contains(matrix.os, 'ubuntu')
+
+      - name: make webview-examples
+        run: make webview-examples
         if: contains(matrix.os, 'ubuntu')
 
       - name: cargo test --workspace --all-targets
