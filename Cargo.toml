@@ -13,6 +13,7 @@ exclude = ["webview-sys/**", "webview-examples/**", ".github/**", "Cargo.lock"]
 
 [dependencies]
 boxfnonce = "0.1"
+serde_derive = "1.0.212"
 tinyfiledialogs = "3.3"
 urlencoding = "1.1"
 webview-sys = { path = "webview-sys", version = "0.6.2" }
