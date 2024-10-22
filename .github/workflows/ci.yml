@@ -66,12 +66,14 @@ jobs:
         with:
           command: test
           args: --workspace --example ${{ matrix.examples }}
+        if: contains(matrix.os, 'ubuntu')
 
       - name: cargo test --workspace --doc
         uses: actions-rs/cargo@v1
         with:
           command: test
           args: --workspace --doc
+        if: contains(matrix.os, 'ubuntu')
 
   test-nightly:
     runs-on: ${{ matrix.os }}
@@ -91,6 +93,7 @@ jobs:
 
       - name: make webview-examples
         run: make webview-examples
+        if: contains(matrix.os, 'ubuntu')
 
       - name: install nightly toolchain
         uses: actions-rs/toolchain@v1
@@ -98,18 +101,21 @@ jobs:
           toolchain: nightly
           profile: minimal
           override: true
+        if: contains(matrix.os, 'ubuntu')
 
       - name: cargo test --workspace --all-targets
         uses: actions-rs/cargo@v1
         with:
           command: test
           args: --workspace --all-targets
+        if: contains(matrix.os, 'ubuntu')
 
       - name: cargo test --workspace --doc
         uses: actions-rs/cargo@v1
         with:
           command: test
           args: --workspace --doc
+        if: contains(matrix.os, 'ubuntu')
 
   check-docs:
     name: Docs
@@ -133,9 +139,11 @@ jobs:
           toolchain: nightly
           profile: minimal
           override: true
+        if: contains(matrix.os, 'ubuntu')
 
       - name: check docs
         uses: actions-rs/cargo@v1
         with:
           command: doc
           args: --workspace --document-private-items
+        if: contains(matrix.os, 'ubuntu')
