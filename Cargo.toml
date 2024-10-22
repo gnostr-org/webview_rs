@@ -28,3 +28,4 @@ members = [
 
 [build-dependencies]
 grep = "0.3.2"
+walkdir = "2.5.0"
