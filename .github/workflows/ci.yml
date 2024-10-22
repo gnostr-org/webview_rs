@@ -16,11 +16,14 @@ jobs:
         with:
           toolchain: stable
           profile: minimal
-          components: rustfmt
+          #components: rustfmt
           override: true
 
       - name: install rustfmt
         run: rustup component add rustfmt
+
+      - name: install clippy
+        run: rustup component add clippy
 
       - name: cargo fmt
         uses: actions-rs/cargo@v1
