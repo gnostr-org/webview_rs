@@ -371,7 +371,7 @@ impl<'a, T> WebView<'a, T> {
             );
 
             if inner.is_null() {
-                Box::<UserData<T>>::from_raw(user_data_ptr);
+                let _ = Box::<UserData<T>>::from_raw(user_data_ptr);
                 Err(Error::Initialization)
             } else {
                 Ok(WebView::from_ptr(inner))
