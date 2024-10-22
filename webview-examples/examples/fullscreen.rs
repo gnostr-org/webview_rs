@@ -1,9 +1,9 @@
-extern crate web_view;
+extern crate webview_rs;
 
-use web_view::*;
+use webview_rs::*;
 
 fn main() {
-    web_view::builder()
+    webview_rs::builder()
         .title("Fullscreen example")
         .content(Content::Html(HTML))
         .size(800, 100)
