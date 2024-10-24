@@ -9,7 +9,7 @@ pub fn scss_to_css(style: &str) -> String {
         },
         Err(_) => "".to_string(),
     }
-    .replace("\n", "")
+    .replace('\n', "")
 }
 
 /// Return the HTML style tag

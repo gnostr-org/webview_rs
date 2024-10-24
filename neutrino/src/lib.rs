@@ -53,7 +53,7 @@ use widgets::menubar::MenuBar;
 use widgets::widget::Widget;
 
 use html_minifier::HTMLMinifier;
-use json;
+
 use std::collections::HashSet;
 
 /// # An abstract application
@@ -113,7 +113,7 @@ impl App {
                     env!("OUT_DIR"),
                     "/app.css"
                 ))),
-                inline_style(&window.theme.css()),
+                inline_style(window.theme.css()),
                 inline_style(&window.style),
             ),
             scripts = format!(
@@ -365,7 +365,7 @@ impl Window {
     fn render(&self, webview: &mut WebView<&str>) -> WVResult {
         let rendered = format!(
             r#"render("<div id=\"app\">{}</div>")"#,
-            self.eval().replace(r#"""#, r#"\""#)
+            self.eval().replace('"', r#"\""#)
         );
         let mut html_minifier = HTMLMinifier::new();
         webview.eval(&match html_minifier.digest(rendered) {

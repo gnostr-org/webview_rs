@@ -41,7 +41,7 @@ fn themes(out_dir: &str) {
 
     fs::create_dir_all(format!("{}/themes", out_dir)).unwrap();
     match fs::read_dir("src/www/themes") {
-        Err(e) => panic!(e),
+        Err(e) => std::panic::panic_any(e),
         Ok(entries) => {
             for entry in entries {
                 let path = entry.unwrap().path();
@@ -65,7 +65,7 @@ fn themes(out_dir: &str) {
         }
     };
 
-    enum_data.push_str("}");
+    enum_data.push('}');
     impl_data.push_str("}}}");
     fs::write(format!("{}/themes/enum.rs", out_dir), enum_data).unwrap();
     fs::write(format!("{}/themes/impl.rs", out_dir), impl_data).unwrap();
@@ -77,7 +77,7 @@ fn icons(out_dir: &str) {
 
     fs::create_dir_all(format!("{}/icons/", out_dir)).unwrap();
     match fs::read_dir("src/www/icons/") {
-        Err(e) => panic!(e),
+        Err(e) => std::panic::panic_any(e),
         Ok(dirs) => {
             for dir in dirs {
                 let path = dir.unwrap().path();
@@ -110,7 +110,7 @@ fn icons(out_dir: &str) {
                     .to_string();
 
                 match fs::read_dir(&path) {
-                    Err(e) => panic!(e),
+                    Err(e) => std::panic::panic_any(e),
                     Ok(entries) => {
                         for entry in entries {
                             let path = entry.unwrap().path();
@@ -132,7 +132,7 @@ fn icons(out_dir: &str) {
                                 &String::from_utf8_lossy(
                                     &fs::read(path2).unwrap(),
                                 )
-                                .replace("\n", ""),
+                                .replace('\n', ""),
                             );
 
                             impl_function_extension.push_str(&format!(
@@ -148,14 +148,14 @@ fn icons(out_dir: &str) {
                     }
                 };
 
-                enum_data.push_str(r#"}"#);
+                enum_data.push('}');
 
                 impl_function_data.push_str(r#"}}"#);
                 impl_function_extension.push_str(r#"}}"#);
 
                 impl_data.push_str(&impl_function_data);
                 impl_data.push_str(&impl_function_extension);
-                impl_data.push_str(r#"}"#);
+                impl_data.push('}');
             }
         }
     };
