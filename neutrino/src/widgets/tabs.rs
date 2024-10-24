@@ -353,9 +353,7 @@ impl Widget for Tabs {
                 };
             }
             _ => {
-                self.state.children[self.state.selected as usize].trigger(
-                    event
-                )
+                self.state.children[self.state.selected as usize].trigger(event)
             }
         }
     }

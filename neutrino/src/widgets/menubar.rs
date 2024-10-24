@@ -268,30 +268,30 @@ impl MenuBar {
                                         Some(0)
                                     } else {
                                         Some(j + 1)
-                                    }
+                                    },
                                 ),
-                                None => self.state.set_hovered_function(
-                                    Some(0)
-                                )
+                                None => {
+                                    self.state.set_hovered_function(Some(0))
+                                }
                             }
                         } else if keys.contains(&Key::Up) {
                             let functions = &self.items[i as usize].functions;
                             match self.state.hovered_function() {
-                                Some(j) => self.state.set_hovered_function(
-                                    if j == 0 {
+                                Some(j) => {
+                                    self.state.set_hovered_function(if j == 0 {
                                         Some(functions.len() as u32 - 1)
                                     } else {
                                         Some(j - 1)
-                                    }
-                                ),
-                                None => self.state.set_hovered_function(
-                                    Some(functions.len() as u32 - 1)
-                                )
+                                    })
+                                }
+                                None => self.state.set_hovered_function(Some(
+                                    functions.len() as u32 - 1,
+                                )),
                             }
                         } else if keys.contains(&Key::Enter) {
                             if let Some(j) = self.state.hovered_function() {
                                 self.on_function_change(&format!(
-                                    "click;{}", 
+                                    "click;{}",
                                     j
                                 ));
                             }
