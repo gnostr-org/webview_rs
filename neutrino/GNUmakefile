@@ -96,6 +96,7 @@ test-gnostr-bounce-event:## 	test-gnostr-bounce-event
 
 -include Makefile
 -include cargo.mk
+-include neutrino.mk
 
 .PHONY:webview-examples
 webview-examples:## 	webview-examples
