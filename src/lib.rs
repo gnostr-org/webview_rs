@@ -79,9 +79,9 @@ pub enum Content<T> {
 /// # Example
 ///
 /// ```no_run
-/// extern crate web_view;
+/// extern crate webview_rs;
 ///
-/// use web_view::*;
+/// use webview_rs::*;
 ///
 /// fn main() {
 ///     WebViewBuilder::new()
@@ -307,6 +307,7 @@ where
     WebViewBuilder::new()
 }
 
+#[allow(clippy::type_complexity)]
 struct UserData<'a, T> {
     inner: T,
     live: Arc<RwLock<()>>,
@@ -371,7 +372,7 @@ impl<'a, T> WebView<'a, T> {
             );
 
             if inner.is_null() {
-                Box::<UserData<T>>::from_raw(user_data_ptr);
+                let _ = Box::<UserData<T>>::from_raw(user_data_ptr);
                 Err(Error::Initialization)
             } else {
                 Ok(WebView::from_ptr(inner))

@@ -1,26 +1,35 @@
 [package]
-name = "web-view"
-version = "0.7.3"
-authors = ["Boscop", "zxey <r.hozak@seznam.cz>", "Sam Green <sam.green81@gmail.com>"]
+name = "webview_rs"
+version = "0.0.0"
+edition = "2021"
+authors = ["gnostr", "admin@gnostr.org","Boscop", "zxey <r.hozak@seznam.cz>", "Sam Green <sam.green81@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-repository = "https://github.com/Boscop/web-view"
+repository = "https://github.com/gnostr-org/webview-rs"
 description = "Rust bindings for webview, a tiny cross-platform library to render web-based GUIs for desktop applications"
 keywords = ["web", "gui", "desktop", "electron", "webkit"]
 categories = ["gui", "web-programming", "api-bindings", "rendering", "visualization"]
 exclude = ["webview-sys/**", "webview-examples/**", ".github/**", "Cargo.lock"]
 
 [dependencies]
+actix-web = "4.9.0"
+boxfnonce = "0.1"
+serde_derive = "1.0.212"
+tinyfiledialogs = "3.3"
 urlencoding = "1.1"
 webview-sys = { path = "webview-sys", version = "0.6.2" }
-boxfnonce = "0.1"
-tinyfiledialogs = "3.3"
 
 [features]
 edge = ["webview-sys/edge"]
 
 [workspace]
 members = [
-    "webview-sys",
     "webview-examples",
+    "webview-sys",
 ]
+
+[build-dependencies]
+actix-web = "4.9.0"
+grep = "0.3.2"
+mime_guess = "2.0.5"
+walkdir = "2.5.0"

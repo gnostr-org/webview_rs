@@ -1,10 +1,12 @@
 #![windows_subsystem = "windows"]
 
-use actix_web::{body::Body, dev::Server, rt, web, App, HttpRequest, HttpResponse, HttpServer};
+//use actix_web::{body::Body, dev::Server, rt, web, App, HttpRequest, HttpResponse, HttpServer};
+use actix_web::*;
+use actix_web::dev::Server;
 use mime_guess::from_path;
 use rust_embed::RustEmbed;
 use std::{borrow::Cow, sync::mpsc, thread};
-use web_view::*;
+use webview_rs::*;
 
 #[derive(RustEmbed)]
 #[folder = "examples/actix"]
@@ -22,7 +24,8 @@ fn assets(req: HttpRequest) -> HttpResponse {
     // query the file from embedded asset with specified path
     match Asset::get(path) {
         Some(content) => {
-            let body: Body = match content {
+            let body: actix_web::error::DispatchError = match content {
+            //let body: Body = match content {
                 Cow::Borrowed(bytes) => bytes.into(),
                 Cow::Owned(bytes) => bytes.into(),
             };
@@ -69,7 +72,7 @@ fn main() {
     // start web view in current thread
     // and point it to a port that was bound
     // to actix web server
-    web_view::builder()
+    webview_rs::builder()
         .title("Actix webview example")
         .content(Content::Url(format!("http://127.0.0.1:{}", port)))
         .size(400, 400)

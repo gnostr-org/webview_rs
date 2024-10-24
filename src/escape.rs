@@ -5,16 +5,17 @@ use std::fmt::{self, Write};
 /// # Example
 ///
 /// ```rust,no_run
-/// # use web_view::WebView;
+/// # use webview_rs::WebView;
 /// # use std::mem;
 /// #
 /// # let mut view: WebView<()> = unsafe { mem::uninitialized() };
+// /// # let mut view: WebView<()> = unsafe { mem::MaybeUninit() };
 /// #
 /// let string = "Hello, world!";
 ///
 /// // Calls the function callback with "Hello, world!" as its parameter.
 ///
-/// view.eval(&format!("callback({});", web_view::escape(string)));
+/// view.eval(&format!("callback({});", webview_rs::escape(string)));
 /// ```
 pub fn escape(string: &str) -> Escaper {
     Escaper(string)
