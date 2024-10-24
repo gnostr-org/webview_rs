@@ -26,6 +26,7 @@ edge = ["webview-sys/edge"]
 members = [
     "webview-examples",
     "webview-sys",
+    "neutrino",
 ]
 
 [build-dependencies]

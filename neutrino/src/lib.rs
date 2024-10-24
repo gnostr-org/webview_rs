@@ -41,7 +41,7 @@
 //! ![](https://raw.githubusercontent.com/wiki/alexislozano/neutrino/images/
 //! styling/6.png)
 
-use web_view::*;
+use webview_rs::*;
 
 pub mod utils;
 pub mod widgets;
@@ -128,7 +128,7 @@ impl App {
             timer = timer,
         );
 
-        let webview = web_view::builder()
+        let webview = webview_rs::builder()
             .title(title)
             .content(Content::Html(html))
             .size(width, height)
